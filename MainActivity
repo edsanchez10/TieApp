@@ -1,0 +1,50 @@
+package com.edson.test.app.changes;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class LayoutA extends Activity {
+
+  @Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_a);
+	
+		final Button LayoutA2 = (Button) findViewById(R.id.blah);//Button 1
+
+		// TODO Auto-generated method stub
+
+		LayoutA2.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				startActivity(new Intent(getApplicationContext(),
+						MainActivity.class));
+			}
+		});
+		
+		final Button LayoutA3 = (Button) findViewById(R.id.blan);//Button 1
+
+		// TODO Auto-generated method stub
+
+		LayoutA3.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				startActivity(new Intent(getApplicationContext(),
+						LayoutB.class));
+			}
+		});
+		
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish();
+	}
+
+}
